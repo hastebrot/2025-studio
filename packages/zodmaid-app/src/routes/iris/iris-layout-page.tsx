@@ -7,7 +7,7 @@ export const IrisLayoutPage = () => {
   useDocumentTitle("iris: layout");
 
   return (
-    <Theme theme="dark">
+    <Theme theme="light">
       <div
         className={classNames(
           "h-dvh overscroll-contain overflow-auto",
@@ -16,36 +16,38 @@ export const IrisLayoutPage = () => {
         )}
       >
         <div className="grid grid-cols-[auto_1fr_auto] h-full">
-          <div className="flex flex-col w-[240px] bg-(--bg-base) border-r border-(--border-base)">
-            <div className="p-[14px] pr-[8px] flex items-center text-sm gap-2">
-              <div className="w-[18px] h-[18px] text-(--fg-base) bg-(--bg-layer-active) rounded-sm flex items-center justify-center font-bold text-xs">
-                W
+          <Theme theme="light">
+            <div className="flex flex-col w-[240px] bg-(--bg-base) border-r border-(--border-base)">
+              <div className="p-[14px] pr-[8px] flex items-center text-sm gap-2">
+                <div className="w-[18px] h-[18px] text-(--fg-base) bg-(--bg-layer-active) rounded-sm flex items-center justify-center font-bold text-xs">
+                  W
+                </div>
+                <div className="text-(--fg-base)">Workspace</div>
+                <IrisIcon name="selector" variant="outlined" height={18} strokeWidth={2} />
+                <div className="ml-auto flex items-center justify-center size-[30px]">
+                  <IrisIcon name="layout-sidebar" variant="outlined" height={18} strokeWidth={2} />
+                </div>
               </div>
-              <div className="text-(--fg-base)">Workspace</div>
-              <IrisIcon name="selector" variant="outlined" height={18} strokeWidth={2} />
-              <div className="ml-auto flex items-center justify-center size-[30px]">
-                <IrisIcon name="layout-sidebar" variant="outlined" height={18} strokeWidth={2} />
+              <div className="p-[8px] flex items-center">
+                <div className="text-(--fg-base)">text base</div>
+                <div
+                  className={classNames(
+                    "ml-auto border border-(--border-base) rounded-md flex items-center justify-center size-[30px]",
+                    "hover:bg-(--bg-layer-active) hover:border-(--border-active) cursor-pointer",
+                  )}
+                >
+                  <IrisIcon name="plus" variant="outlined" height={18} strokeWidth={2} />
+                </div>
+              </div>
+              <hr className="h-px w-full bg-(--border-base) border-none" />
+              <div className="flex px-[8px] mt-[8px]">
+                <div className="h-[30px] w-full bg-(--bg-layer-active) rounded-md"></div>
+              </div>
+              <div className="flex px-[8px] mt-[8px]">
+                <div className="h-[30px] w-full bg-(--bg-layer-active) rounded-md"></div>
               </div>
             </div>
-            <div className="p-[8px] flex items-center">
-              <div className="text-(--fg-base)">text base</div>
-              <div
-                className={classNames(
-                  "ml-auto border border-(--border-base) rounded-md flex items-center justify-center size-[30px]",
-                  "hover:bg-(--bg-layer-active) hover:border-(--border-active) cursor-pointer",
-                )}
-              >
-                <IrisIcon name="plus" variant="outlined" height={18} strokeWidth={2} />
-              </div>
-            </div>
-            <hr className="h-px w-full bg-(--border-base) border-none" />
-            <div className="flex px-[8px] mt-[8px]">
-              <div className="h-[30px] w-full bg-(--bg-layer-active) rounded-md"></div>
-            </div>
-            <div className="flex px-[8px] mt-[8px]">
-              <div className="h-[30px] w-full bg-(--bg-layer-active) rounded-md"></div>
-            </div>
-          </div>
+          </Theme>
           <div className="flex flex-col bg-(--bg-layer)">
             <div className="px-[14px] flex items-center h-[44px]">
               <div className="flex items-center justify-center size-[30px]">
@@ -75,6 +77,7 @@ export const IrisLayoutPage = () => {
               <div className="text-(--fg-base)">text base</div>
               <div className="text-(--fg-subtle)">text subtle</div>
               <div className="text-(--fg-muted)">text muted</div>
+              <div className="my-4 p-4 rounded-sm shadow-sm bg-white">panel</div>
             </div>
           </div>
           <div className="p-8 bg-(--bg-base) border-l border-(--border-base)">
@@ -123,7 +126,7 @@ export const Theme = (props: { children?: React.ReactNode; theme: "light" | "dar
   } as CSSProperties;
   return (
     <div
-      className="font-sans text-(size:--text-font-size)/(--text-line-height)"
+      className="font-sans text-(size:--text-font-size)/(--text-line-height) grid"
       style={{ ...style, ...(props.theme === "light" ? lightMode : darkMode) }}
       data-theme={props.theme}
     >

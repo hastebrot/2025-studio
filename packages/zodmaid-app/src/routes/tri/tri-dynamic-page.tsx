@@ -1,4 +1,5 @@
 import { Fragment, type CSSProperties } from "react";
+import { useLocation, useNavigate, type RouteObject } from "react-router";
 import { BaseGridView, defineGridContext, type BaseCellProps, type GridContextProps } from "zodspy";
 import { TriCell } from "zodspy/components/tri-cell";
 import { TriGrid } from "zodspy/components/tri-grid";
@@ -18,6 +19,46 @@ import { items } from "zodspy/examples/tri-schema-items";
 import { classNames } from "../../helpers/clsx";
 import { throwError } from "../../helpers/error";
 import { useDocumentTitle } from "../../helpers/react";
+import { routes } from "../routes";
+
+const toPaths = (routes: RouteObject[]) => {
+  const paths = [];
+  for (const route of routes) {
+    const subRoutes = route.children ?? [];
+    for (const subRoute of subRoutes) {
+      const path = route.path + "/" + subRoute.path;
+      paths.push(path);
+    }
+  }
+  return paths;
+};
+
+const RoutesPathNav = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const paths = toPaths(routes);
+  const onSelectChange = (value: string) => {
+    navigate(value);
+  };
+
+  return (
+    <div className="-mt-4 pb-4">
+      <select
+        className="appearance-none cursor-pointer text-(--fg-accent) text-sm"
+        value={location.pathname}
+        onChange={(event) => {
+          onSelectChange(event.target.value);
+        }}
+      >
+        {paths.map((path) => (
+          <option key={path} value={path}>
+            {path}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+};
 
 export const TriDynamicPage = () => {
   useDocumentTitle("tri: grid view dynamic");
@@ -37,6 +78,7 @@ export const TriDynamicPage = () => {
         ],
       )}
     >
+      <RoutesPathNav />
       <TriTheme>
         <TriGridView value={rows} />
       </TriTheme>

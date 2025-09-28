@@ -21,10 +21,7 @@ export function renderCell<DataModel>(item?: DataModel, key?: string) {
       <div className="pr-1 w-full">
         {/* {textValue} */}
         <IrisInput
-          className={classNames(
-            "outline-2 -outline-offset-1 outline-zinc-500 focus:outline-(--cell-outline-selected)",
-            "box-content min-w-full min-h-lh",
-          )}
+          className={classNames("outline-none", "box-content min-w-full min-h-lh")}
           placeholder="Empty"
           value={textValue}
           onValueChange={setTextValue}

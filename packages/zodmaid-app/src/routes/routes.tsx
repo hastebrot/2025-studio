@@ -4,6 +4,7 @@ import { InputFieldSizingPage } from "./iris/input-field-sizing-page";
 import { IrisColorsPage } from "./iris/iris-colors-page";
 import { IrisHillChartPage } from "./iris/iris-hill-chart-page";
 import { IrisLayoutPage } from "./iris/iris-layout-page";
+import { IrisScopeMapPage } from "./iris/iris-scope-map-page";
 import { LexTextboxFocusPage } from "./iris/lex-textbox-focus-page";
 import { LexTextboxPage } from "./iris/lex-textbox-page";
 import { OctoDiagramAntvPage } from "./octo/diagram-antv-page";
@@ -48,6 +49,7 @@ export const routes: RouteObject[] = [
       { path: "textbox-focus", Component: () => <LexTextboxFocusPage /> },
       { path: "input", Component: () => <InputFieldSizingPage /> },
       { path: "hill-chart", Component: () => <IrisHillChartPage /> },
+      { path: "scope-map", Component: () => <IrisScopeMapPage /> },
     ],
   },
   {
