@@ -1,12 +1,12 @@
-# zodmaid
+# 2025-studio
 
 > [!NOTE]
 > This project is in a very early stage of development.
 
 **usage:**
 
-- `git clone https://github.com/hastebrot/zodmaid`
-- `cd zodmaid/packages/zodmaid`
+- `git clone https://github.com/hastebrot/2025-studio`
+- `cd 2025-studio/packages/zodmaid`
 - `bun install --linker=isolated`
 - `bun run build`
 - `bun run test --watch zodmaid`

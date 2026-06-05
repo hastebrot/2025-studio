@@ -2,7 +2,9 @@ import { useEffect } from "react";
 import { useNavigate, type RouteObject } from "react-router";
 import { InputFieldSizingPage } from "./iris/input-field-sizing-page";
 import { IrisColorsPage } from "./iris/iris-colors-page";
+import { IrisHillChartPage } from "./iris/iris-hill-chart-page";
 import { IrisLayoutPage } from "./iris/iris-layout-page";
+import { IrisScopeMapPage } from "./iris/iris-scope-map-page";
 import { LexTextboxFocusPage } from "./iris/lex-textbox-focus-page";
 import { LexTextboxPage } from "./iris/lex-textbox-page";
 import { OctoDiagramAntvPage } from "./octo/diagram-antv-page";
@@ -12,7 +14,6 @@ import { GridViewStaticPage } from "./tetra/grid-view-static-page";
 import { GridViewStyledPage } from "./tetra/grid-view-styled-page";
 import { MobxObserverPage } from "./tetra/mobx-observer-page";
 import { MockupGridPage } from "./tetra/mockup-grid-page";
-import { ReactDataGridPage } from "./tetra/react-data-grid-page";
 import { TriDynamicPage } from "./tri/tri-dynamic-page";
 import { TriStaticPage } from "./tri/tri-static-page";
 
@@ -46,6 +47,8 @@ export const routes: RouteObject[] = [
       { path: "textbox", Component: () => <LexTextboxPage /> },
       { path: "textbox-focus", Component: () => <LexTextboxFocusPage /> },
       { path: "input", Component: () => <InputFieldSizingPage /> },
+      { path: "hill-chart", Component: () => <IrisHillChartPage /> },
+      { path: "scope-map", Component: () => <IrisScopeMapPage /> },
     ],
   },
   {
@@ -64,7 +67,7 @@ export const routes: RouteObject[] = [
       { path: "grid-static", Component: () => <GridViewStaticPage /> },
       { path: "grid-styled", Component: () => <GridViewStyledPage /> },
       { path: "mockup", Component: () => <MockupGridPage /> },
-      { path: "react-data-grid", Component: () => <ReactDataGridPage /> },
+      // { path: "react-data-grid", Component: () => <ReactDataGridPage /> },
       { path: "mobx", Component: () => <MobxObserverPage /> },
     ],
   },
