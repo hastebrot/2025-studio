@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { determineJsonType, TetraJsonTypeButton } from "zodspy";
-import { IrisInput } from "zodspy/components/iris-input";
-import { classNames } from "../../helpers/clsx";
 
 export function renderCell<DataModel>(item?: DataModel, key?: string) {
   if (item == null || key == null) return null;
@@ -19,14 +17,14 @@ export function renderCell<DataModel>(item?: DataModel, key?: string) {
     <div className="flex items-center">
       <TetraJsonTypeButton type={type} />
       <div className="pr-1 w-full">
-        {/* {textValue} */}
-        <IrisInput
+        {textValue}
+        {/* <IrisInput
           className={classNames("outline-none", "box-content min-w-full min-h-lh")}
           placeholder="Empty"
           value={textValue}
           onValueChange={setTextValue}
           onKeyCommand={onKeyCommand}
-        />
+        /> */}
         {/* <IrisTextarea
           className={classNames(
             "outline-2 -outline-offset-1 outline-zinc-500 focus:outline-(--cell-outline-selected)",

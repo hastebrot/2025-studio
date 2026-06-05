@@ -14,7 +14,6 @@ import { GridViewStaticPage } from "./tetra/grid-view-static-page";
 import { GridViewStyledPage } from "./tetra/grid-view-styled-page";
 import { MobxObserverPage } from "./tetra/mobx-observer-page";
 import { MockupGridPage } from "./tetra/mockup-grid-page";
-import { ReactDataGridPage } from "./tetra/react-data-grid-page";
 import { TriDynamicPage } from "./tri/tri-dynamic-page";
 import { TriStaticPage } from "./tri/tri-static-page";
 
@@ -68,7 +67,7 @@ export const routes: RouteObject[] = [
       { path: "grid-static", Component: () => <GridViewStaticPage /> },
       { path: "grid-styled", Component: () => <GridViewStyledPage /> },
       { path: "mockup", Component: () => <MockupGridPage /> },
-      { path: "react-data-grid", Component: () => <ReactDataGridPage /> },
+      // { path: "react-data-grid", Component: () => <ReactDataGridPage /> },
       { path: "mobx", Component: () => <MobxObserverPage /> },
     ],
   },
